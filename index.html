@@ -1,1 +1,824 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>GATUL STORE</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#0b1020;
+    color:white;
+}
+
+/* NAVBAR */
+
+nav{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(11,16,32,.95);
+    padding:18px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:1px solid #26304a;
+}
+
+.logo{
+    color:#00e5ff;
+    font-size:25px;
+    font-weight:bold;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:25px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:#00e5ff;
+}
+
+/* HERO */
+
+.hero{
+    min-height:550px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:40px 20px;
+
+    background:
+    radial-gradient(circle at top,#183b63,#0b1020 65%);
+}
+
+.hero h1{
+    font-size:60px;
+    margin-bottom:15px;
+}
+
+.hero h1 span{
+    color:#00e5ff;
+}
+
+.hero p{
+    color:#aeb8d0;
+    font-size:18px;
+    margin-bottom:30px;
+}
+
+.btn{
+    display:inline-block;
+    padding:13px 25px;
+    background:#00e5ff;
+    color:#061018;
+    border:0;
+    border-radius:10px;
+    font-weight:bold;
+    cursor:pointer;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-4px);
+    box-shadow:0 8px 25px #00e5ff44;
+}
+
+/* SECTION */
+
+section{
+    padding:70px 7%;
+}
+
+.judul{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.judul h2{
+    color:#00e5ff;
+    font-size:35px;
+}
+
+.judul p{
+    color:#8994ae;
+    margin-top:10px;
+}
+
+/* PRODUK */
+
+.produk{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:#151b2e;
+    border:1px solid #29344d;
+    border-radius:18px;
+    padding:20px;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    border-color:#00e5ff;
+    box-shadow:0 10px 30px #00e5ff18;
+}
+
+.gambar{
+    height:170px;
+    border-radius:13px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:65px;
+    margin-bottom:18px;
+}
+
+.ikan{
+    background:linear-gradient(135deg,#00695c,#00a896);
+}
+
+.klepon{
+    background:linear-gradient(135deg,#2e7d32,#8bc34a);
+}
+
+.akun{
+    background:linear-gradient(135deg,#312e81,#00a6c7);
+}
+
+.card h3{
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#9ca6bd;
+    font-size:14px;
+    line-height:1.5;
+}
+
+.harga{
+    color:#00e5ff;
+    font-size:21px;
+    font-weight:bold;
+    margin:18px 0;
+}
+
+.beli{
+    width:100%;
+}
+
+/* SEARCH */
+
+.search{
+    max-width:500px;
+    margin:0 auto 40px;
+}
+
+.search input{
+    width:100%;
+    padding:15px;
+    border-radius:10px;
+    border:1px solid #303b55;
+    background:#151b2e;
+    color:white;
+    outline:none;
+}
+
+/* CHECKOUT */
+
+.checkout{
+    background:#11182a;
+}
+
+.co-box{
+    max-width:600px;
+    margin:auto;
+    background:#151b2e;
+    border:1px solid #29344d;
+    border-radius:20px;
+    padding:35px;
+}
+
+.co-box h2{
+    text-align:center;
+    color:#00e5ff;
+    margin-bottom:25px;
+}
+
+.co-box label{
+    display:block;
+    margin:15px 0 7px;
+}
+
+.co-box input,
+.co-box select{
+    width:100%;
+    padding:13px;
+    background:#0b1020;
+    color:white;
+    border:1px solid #303b55;
+    border-radius:8px;
+}
+
+.co-box button{
+    width:100%;
+    margin-top:20px;
+}
+
+/* KONTAK */
+
+.contact{
+    text-align:center;
+}
+
+.contact h2{
+    color:#00e5ff;
+    margin-bottom:20px;
+}
+
+.contact p{
+    color:#aeb8d0;
+    margin:10px;
+}
+
+.wa{
+    display:inline-block;
+    margin-top:20px;
+    background:#25D366;
+    color:white;
+    padding:13px 25px;
+    border-radius:10px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.wa:hover{
+    background:#128C7E;
+}
+
+/* FOOTER */
+
+footer{
+    background:#070b15;
+    text-align:center;
+    padding:25px;
+    color:#78839d;
+}
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+    nav{
+        padding:15px 4%;
+    }
+
+    nav ul{
+        gap:10px;
+    }
+
+    nav a{
+        font-size:12px;
+    }
+
+    .logo{
+        font-size:19px;
+    }
+
+    .hero h1{
+        font-size:40px;
+    }
+
+    .hero p{
+        font-size:15px;
+    }
+
+    section{
+        padding:50px 5%;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+
+    <div class="logo">
+        ⚡ GATUL STORE
+    </div>
+
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#produk">Produk</a></li>
+        <li><a href="#co">CO</a></li>
+        <li><a href="#kontak">Kontak</a></li>
+    </ul>
+
+</nav>
+
+
+<!-- HOME -->
+
+<section class="hero" id="home">
+
+    <div>
+
+        <h1>
+            GATUL <span>STORE</span>
+        </h1>
+
+        <p>
+            Iwak Segar • Klepon Lezat • Akun Pilihan
+        </p>
+
+        <p>
+            Satu tempat untuk berbagai kebutuhan kamu.
+        </p>
+
+        <a href="#produk" class="btn">
+            🛒 LIHAT PRODUK
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- PRODUK -->
+
+<section id="produk">
+
+    <div class="judul">
+
+        <h2>🔥 PRODUK KAMI</h2>
+
+        <p>
+            Pilih produk yang kamu inginkan
+        </p>
+
+    </div>
+
+
+    <!-- SEARCH -->
+
+    <div class="search">
+
+        <input
+            type="text"
+            id="search"
+            placeholder="🔍 Cari produk..."
+            onkeyup="cariProduk()">
+
+    </div>
+
+
+    <div class="produk" id="daftarProduk">
+
+
+        <!-- IKAN -->
+
+        <div class="card">
+
+            <div class="gambar ikan">
+                🐟
+            </div>
+
+            <h3>Ikan Lele</h3>
+
+            <p>
+                Ikan segar dan berkualitas.
+            </p>
+
+            <div class="harga">
+                Rp20.000 / Kg
+            </div>
+
+            <button
+                class="btn beli"
+                onclick="pesan('Ikan Lele - Rp20.000/Kg')">
+
+                🛒 Pesan
+
+            </button>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="gambar ikan">
+                🐠
+            </div>
+
+            <h3>Ikan Nila</h3>
+
+            <p>
+                Ikan nila segar pilihan.
+            </p>
+
+            <div class="harga">
+                Rp30.000 / Kg
+            </div>
+
+            <button
+                class="btn beli"
+                onclick="pesan('Ikan Nila - Rp30.000/Kg')">
+
+                🛒 Pesan
+
+            </button>
+
+        </div>
+
+
+        <!-- KLEPON -->
+
+        <div class="card">
+
+            <div class="gambar klepon">
+                🟢
+            </div>
+
+            <h3>Klepon Original</h3>
+
+            <p>
+                Klepon isi gula merah dan kelapa.
+            </p>
+
+            <div class="harga">
+                Rp10.000 / Box
+            </div>
+
+            <button
+                class="btn beli"
+                onclick="pesan('Klepon Original - Rp10.000/Box')">
+
+                🛒 Pesan
+
+            </button>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="gambar klepon">
+                🟢
+            </div>
+
+            <h3>Klepon Premium</h3>
+
+            <p>
+                Klepon lembut dengan bahan berkualitas.
+            </p>
+
+            <div class="harga">
+                Rp15.000 / Box
+            </div>
+
+            <button
+                class="btn beli"
+                onclick="pesan('Klepon Premium - Rp15.000/Box')">
+
+                🛒 Pesan
+
+            </button>
+
+        </div>
+
+
+        <!-- AKUN -->
+
+        <div class="card">
+
+            <div class="gambar akun">
+                🎮
+            </div>
+
+            <h3>Akun Game Basic</h3>
+
+            <p>
+                Akun game dengan berbagai item menarik.
+            </p>
+
+            <div class="harga">
+                Rp50.000
+            </div>
+
+            <button
+                class="btn beli"
+                onclick="pesan('Akun Game Basic - Rp50.000')">
+
+                🛒 Pesan
+
+            </button>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="gambar akun">
+                💎
+            </div>
+
+            <h3>Akun Game Premium</h3>
+
+            <p>
+                Akun premium dengan koleksi lengkap.
+            </p>
+
+            <div class="harga">
+                Rp100.000
+            </div>
+
+            <button
+                class="btn beli"
+                onclick="pesan('Akun Game Premium - Rp100.000')">
+
+                🛒 Pesan
+
+            </button>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="gambar akun">
+                👑
+            </div>
+
+            <h3>Akun Sultan</h3>
+
+            <p>
+                Akun dengan koleksi item premium.
+            </p>
+
+            <div class="harga">
+                Rp250.000
+            </div>
+
+            <button
+                class="btn beli"
+                onclick="pesan('Akun Sultan - Rp250.000')">
+
+                🛒 Pesan
+
+            </button>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- CHECKOUT -->
+
+<section class="checkout" id="co">
+
+    <div class="co-box">
+
+        <h2>
+            🛍️ CHECKOUT / CO
+        </h2>
+
+
+        <label>
+            Nama Pembeli
+        </label>
+
+        <input
+            type="text"
+            id="nama"
+            placeholder="Masukkan nama kamu">
+
+
+        <label>
+            Pilih Produk
+        </label>
+
+        <select id="produkPilihan">
+
+            <option>Ikan Lele - Rp20.000/Kg</option>
+
+            <option>Ikan Nila - Rp30.000/Kg</option>
+
+            <option>Klepon Original - Rp10.000/Box</option>
+
+            <option>Klepon Premium - Rp15.000/Box</option>
+
+            <option>Akun Game Basic - Rp50.000</option>
+
+            <option>Akun Game Premium - Rp100.000</option>
+
+            <option>Akun Sultan - Rp250.000</option>
+
+        </select>
+
+
+        <button
+            class="btn"
+            onclick="checkout()">
+
+            💬 CHECKOUT VIA WHATSAPP
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="contact" id="kontak">
+
+    <h2>
+        📞 KONTAK GATUL STORE
+    </h2>
+
+    <p>
+        📍 Jl. Contoh Alamat Toko
+    </p>
+
+    <p>
+        📱 WhatsApp: 08XXXXXXXXXX
+    </p>
+
+
+    <a
+        class="wa"
+        href="https://wa.me/628XXXXXXXXXX"
+        target="_blank">
+
+        💬 CHAT WHATSAPP
+
+    </a>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <p>
+        © 2026 GATUL STORE
+    </p>
+
+    <p>
+        Iwak • Klepon • Akun
+    </p>
+
+</footer>
+
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+
+// PESAN PRODUK
+
+function pesan(produk){
+
+    let nomor = "628XXXXXXXXXX";
+
+    let teks =
+        "Halo Admin GATUL STORE 👋\n\n" +
+        "Saya ingin memesan:\n" +
+        produk +
+        "\n\nApakah masih tersedia?";
+
+    let link =
+        "https://wa.me/" +
+        nomor +
+        "?text=" +
+        encodeURIComponent(teks);
+
+    window.open(link,"_blank");
+
+}
+
+
+// CHECKOUT
+
+function checkout(){
+
+    let nama =
+        document.getElementById("nama").value;
+
+    let produk =
+        document.getElementById("produkPilihan").value;
+
+
+    if(nama === ""){
+
+        alert(
+            "Silakan masukkan nama terlebih dahulu!"
+        );
+
+        return;
+
+    }
+
+
+    let nomor = "628XXXXXXXXXX";
+
+
+    let teks =
+        "Halo Admin GATUL STORE 👋\n\n" +
+        "Nama Pembeli: " + nama +
+        "\nProduk: " + produk +
+        "\n\nSaya ingin melakukan checkout.";
+
+
+    let link =
+        "https://wa.me/" +
+        nomor +
+        "?text=" +
+        encodeURIComponent(teks);
+
+
+    window.open(link,"_blank");
+
+}
+
+
+// SEARCH PRODUK
+
+function cariProduk(){
+
+    let input =
+        document
+        .getElementById("search")
+        .value
+        .toLowerCase();
+
+
+    let cards =
+        document.querySelectorAll(".card");
+
+
+    cards.forEach(function(card){
+
+        let nama =
+            card
+            .querySelector("h3")
+            .innerText
+            .toLowerCase();
+
+
+        if(nama.includes(input)){
+
+            card.style.display = "block";
+
+        }else{
+
+            card.style.display = "none";
+
+        }
+
+    });
+
+}
+
+</script>
+
+</body>
+</html>
